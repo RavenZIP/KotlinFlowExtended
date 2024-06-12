@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KotlinFlowExtended"
-include(":KotlinFlowExtended")
+include(":kotlinflowextended")
