@@ -13,3 +13,36 @@
 # 📄 О проекте
 ## Описание
 Данная библиотека создана с целью расширить возможности Kotlin Flow дополнительными функциями
+
+# 🛠 Установка
+В файл **settings.gradle.kts** добавьте
+```
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven ("https://jitpack.io")
+    }
+}
+```
+Затем, в файл **build.gradle.kts (:app)** добавьте
+```
+dependencies {
+      implementation("com.github.RavenZIP:KotlinFlowExtended:1.0.1")
+}
+```
+Обратите внимание, что minSdk должен быть указан >= 27
+```
+android {
+      defaultConfig {
+            minSdk = 27
+      }
+}
+```
+
+Синхронизируйте Gradle с проектом и запустите сборку.
+
+# 👾 Разработчик
+**Черных Александр**
+- [Github](https://github.com/RavenZIP)
+- [Telegram](https://t.me/bexwdgst)
+- [Telegram канал с проектами](https://t.me/RavenZIProjects)
