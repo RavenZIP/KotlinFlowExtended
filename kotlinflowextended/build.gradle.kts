@@ -23,10 +23,12 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
@@ -37,7 +39,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.ravenzip.kotlinflowextended"
             artifactId = "kotlinflowextended"
-            version = "1.0.1"
+            version = "1.1.0"
 
             afterEvaluate { from(components["release"]) }
         }
@@ -45,10 +47,8 @@ publishing {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
