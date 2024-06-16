@@ -6,8 +6,8 @@
 
 <p align="center">
 <img alt="Android" src="https://img.shields.io/badge/Android-39ad31">
-<img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-1.9.10-A831F5">
-<img alt="Static Badge" src="https://img.shields.io/badge/v1.0.0-f88909">
+<img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.0.0-A831F5">
+<img alt="Static Badge" src="https://img.shields.io/badge/v1.1.0-f88909">
 </p>
 
 # 📄 О проекте
@@ -27,7 +27,7 @@ dependencyResolutionManagement {
 Затем, в файл **build.gradle.kts (:app)** добавьте
 ```
 dependencies {
-      implementation("com.github.RavenZIP:KotlinFlowExtended:1.0.1")
+      implementation("com.github.RavenZIP:KotlinFlowExtended:1.1.0")
 }
 ```
 Обратите внимание, что minSdk должен быть указан >= 27
