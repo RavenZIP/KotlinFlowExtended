@@ -6,16 +6,20 @@
 
 <p align="center">
 <img alt="Android" src="https://img.shields.io/badge/Android-39ad31">
-<img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.0.0-A831F5">
-<img alt="Static Badge" src="https://img.shields.io/badge/v1.1.0-f88909">
+<img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.1.0-A831F5">
+<img alt="Static Badge" src="https://img.shields.io/badge/v1.2.0-f88909">
 </p>
 
 # 📄 О проекте
+
 ## Описание
+
 Данная библиотека создана с целью расширить возможности Kotlin Flow дополнительными функциями
 
 # 🛠 Установка
+
 В файл **settings.gradle.kts** добавьте
+
 ```
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -24,13 +28,17 @@ dependencyResolutionManagement {
     }
 }
 ```
+
 Затем, в файл **build.gradle.kts (:app)** добавьте
+
 ```
 dependencies {
-      implementation("com.github.RavenZIP:KotlinFlowExtended:1.1.0")
+      implementation("com.github.RavenZIP:KotlinFlowExtended:1.2.0")
 }
 ```
+
 Обратите внимание, что minSdk должен быть указан >= 27
+
 ```
 android {
       defaultConfig {
@@ -42,7 +50,9 @@ android {
 Синхронизируйте Gradle с проектом и запустите сборку.
 
 # 👾 Разработчик
+
 **Черных Александр**
+
 - [Github](https://github.com/RavenZIP)
 - [Telegram](https://t.me/bexwdgst)
 - [Telegram канал с проектами](https://t.me/RavenZIProjects)

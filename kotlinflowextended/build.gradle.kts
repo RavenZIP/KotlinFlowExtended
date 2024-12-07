@@ -39,7 +39,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.ravenzip.kotlinflowextended"
             artifactId = "kotlinflowextended"
-            version = "1.1.0"
+            version = "1.2.0"
 
             afterEvaluate { from(components["release"]) }
         }
