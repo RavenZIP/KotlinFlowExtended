@@ -7,7 +7,7 @@
 <p align="center">
 <img alt="Android" src="https://img.shields.io/badge/Android-39ad31">
 <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.1.0-A831F5">
-<img alt="Static Badge" src="https://img.shields.io/badge/v1.2.0-f88909">
+<img alt="Static Badge" src="https://img.shields.io/badge/v1.3.0-f88909">
 </p>
 
 # 📄 О проекте
@@ -33,7 +33,7 @@ dependencyResolutionManagement {
 
 ```
 dependencies {
-      implementation("com.github.RavenZIP:KotlinFlowExtended:1.2.0")
+      implementation("com.github.RavenZIP:KotlinFlowExtended:1.3.0")
 }
 ```
 

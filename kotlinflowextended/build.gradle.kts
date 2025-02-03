@@ -19,7 +19,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -29,9 +29,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
+    kotlinOptions { jvmTarget = "17" }
 }
 
 publishing {
@@ -39,7 +37,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.ravenzip.kotlinflowextended"
             artifactId = "kotlinflowextended"
-            version = "1.2.0"
+            version = "1.3.0"
 
             afterEvaluate { from(components["release"]) }
         }
