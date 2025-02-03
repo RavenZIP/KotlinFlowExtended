@@ -1,6 +1,6 @@
 package com.ravenzip.kotlinflowextended.functions
 
-import com.ravenzip.kotlinflowextended.models.FlowOIndexedObject
+import com.ravenzip.kotlinflowextended.models.FlowIndexedObject
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -22,24 +22,22 @@ import kotlinx.coroutines.sync.Semaphore
  */
 fun <T> forkJoin(flows: List<Flow<T>>, flowLimit: Int = 3): Flow<List<T>> = flow {
     coroutineScope {
-        // Семафор для ограничения количества одновременно работающих потоков
         val semaphore = Semaphore(flowLimit)
-        val deferredResults = mutableListOf<Deferred<FlowOIndexedObject<T>>>()
+        val deferredResults = mutableListOf<Deferred<FlowIndexedObject<T>>>()
 
         flows.forEachIndexed { index, flow ->
-            semaphore.acquire() // Ограничиваем количество потоков
+            semaphore.acquire()
             val deferred = async {
                 try {
-                    val result = flow.first() // Берем только первый элемент (как в RxJS forkJoin)
-                    FlowOIndexedObject.create(result, index)
+                    val result = flow.first()
+                    FlowIndexedObject.create(result, index)
                 } finally {
-                    semaphore.release() // Освобождаем место в семафоре
+                    semaphore.release()
                 }
             }
             deferredResults.add(deferred)
         }
 
-        // Ждем завершения всех задач и сортируем результаты
         val results = deferredResults.awaitAll().sortedBy { it.index }.map { it.value }
         emit(results)
     }
@@ -58,14 +56,14 @@ fun <T> forkJoin(flows: List<Flow<T>>, flowLimit: Int = 3): Flow<List<T>> = flow
 fun <T> forkJoin(vararg flows: Flow<T>, flowLimit: Int = 3): Flow<List<T>> = flow {
     coroutineScope {
         val semaphore = Semaphore(flowLimit)
-        val deferredResults = mutableListOf<Deferred<FlowOIndexedObject<T>>>()
+        val deferredResults = mutableListOf<Deferred<FlowIndexedObject<T>>>()
 
         flows.forEachIndexed { index, flow ->
             semaphore.acquire()
             val deferred = async {
                 try {
                     val result = flow.first()
-                    FlowOIndexedObject(result, index)
+                    FlowIndexedObject(result, index)
                 } finally {
                     semaphore.release()
                 }
