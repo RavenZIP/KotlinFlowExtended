@@ -19,7 +19,7 @@ fun <T> Flow<T>.materialize(): Flow<FlowNotification<T>> =
 fun <T> Flow<FlowNotification<T>>.dematerialize(): Flow<T> =
     this.transform { notification ->
         when (notification) {
-            is FlowNotification.Next -> notification.value
+            is FlowNotification.Next -> emit(notification.value)
             is FlowNotification.Error -> throw notification.error
             is FlowNotification.Complete -> return@transform
         }
